@@ -4,7 +4,7 @@ process NANOPLOT {
 
     conda (params.enable_conda ? 'bioconda::nanoplot=1.40.0' : null)
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
-        'https://depot.galaxyproject.org/singularity/nanoplot:1.40.0--pyhdfd78af_0' :
+        'https://depot.galaxyproject.org/singularity/nanoplot:1.8.1--py36_0' :
         'quay.io/biocontainers/nanoplot:1.40.0--pyhdfd78af_0' }"
 
     input:
@@ -27,6 +27,7 @@ process NANOPLOT {
     """
     NanoPlot \\
         $args \\
+        -f png \\
         -t $task.cpus \\
         $input_file
     cat <<-END_VERSIONS > versions.yml
