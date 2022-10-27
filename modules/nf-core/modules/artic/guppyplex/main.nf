@@ -20,7 +20,7 @@ process ARTIC_GUPPYPLEX {
     script:
     def args = task.ext.args ?: ''
     def prefix = task.ext.prefix ?: "${meta.id}"
-    def VERSION = '1.2.2' // WARN: Version information provided by tool on CLI is incorrect. Please update this string when bumping container versions.
+    def VERSION = '1.2.3' // WARN: Version information provided by tool on CLI is incorrect. Please update this string when bumping container versions.
     """
     artic \\
         guppyplex \\
