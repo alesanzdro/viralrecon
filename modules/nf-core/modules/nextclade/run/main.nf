@@ -4,7 +4,7 @@ process NEXTCLADE_RUN {
 
     conda (params.enable_conda ? "bioconda::nextclade=2.4.0" : null)
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
-        'https://depot.galaxyproject.org/singularity/nextclade:2.7.0--h9ee0642_0' :
+        'https://depot.galaxyproject.org/singularity/nextclade:2.8.0--h9ee0642_0' :
         'quay.io/biocontainers/nextclade:2.5.0--h9ee0642_0' }"
 
     input:
